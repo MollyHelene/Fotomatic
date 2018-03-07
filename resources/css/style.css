@@ -26,9 +26,7 @@ html {
 
 .image-container img {
   display: block;
-  height: 65%;
-  width: 90%;
-  margin: 2rem;
+  max-width: 100%;
 }
 
 @media only screen and (max-width: 760px) {
@@ -42,6 +40,7 @@ html {
 header {
   position: fixed;
   width: 100%;
+  z-index: 100;
   border-bottom: solid 1px #c6c1c1;
   background-color: white;
 }
@@ -122,11 +121,13 @@ header .mobile {
   height: 43.5rem;
   background: url(../images/banner-landingpage.jpg) no-repeat center center;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
   background-size: cover;
 }
 
 #sign-up-cta {
+  position: relative;
+  height: 20rem;
   margin-top: 10.625rem;
   margin-left: 6.25rem;
   padding: 0 5rem 2.5rem 5rem;
@@ -233,9 +234,17 @@ header .mobile {
 }
 
 .feature .image-container {
-  width: 90%;
   height: 65%;
+  width: 90%;
   margin: 0 auto;
+}
+
+.feature .content {
+  padding: 2.5rem 0;
+}
+
+.content {
+  max-height: 11.6875rem;
 }
 
 .feature h2 {
@@ -303,6 +312,8 @@ header .mobile {
 }
 
 #filters-section .images-container {
+  display: flex;
+  flex-direction: row;
   max-width: 100%;
   padding: 0 1%;
 }
@@ -343,11 +354,11 @@ header .mobile {
   background-color: #f3f3f3;
 }
 
-#quotes-section content {
+#quotes-section .content {
   padding: 5rem 0;
 }
 
-#quotes-section quote {
+#quotes-section .quote {
   padding-right: 1.875rem;
   font-family: "Palatino", serif;
   font-size: 1.875rem;
@@ -356,21 +367,21 @@ header .mobile {
   color: #4a4a4a;
 }
 
-#quotes-section quote-citation {
+#quotes-section .quote-citation {
   height: 1.875rem;
 }
 
 @media only screen and (max-width: 760px) {
-  #quotes-section content {
+  #quotes-section .content {
     padding: 1.875rem .625rem;
   }
 
-  #quotes-section quote {
+  #quotes-section .quote {
     font-size: 1.5rem;
     line-height: 1.4;
   }
 
-  #quotes-section quote-citation {
+  #quotes-section .quote-citation {
     display: block;
     padding-top: 1rem;
     margin: auto;
@@ -381,13 +392,14 @@ header .mobile {
 
 footer {
   background-color: #9b9b9b;
-  padding: 1.5rem 2rem;
+  height: 3.875rem;
 }
 
 footer .content {
   color: white;
   display: flex;
   font-size: .75rem;
+  padding: 1.5rem 2rem;
 }
 
 footer .copyright {
